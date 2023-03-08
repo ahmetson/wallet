@@ -6,15 +6,13 @@ import SharedButton, {
   Props as SharedButtonProps,
 } from "../../Shared/SharedButton"
 
-// TODO: Rename this to signing button
-export default function TransactionButton({
+export default function SigningButton({
   type,
   size,
   isDisabled,
   onClick,
   children,
-  reactOnWindowFocus = false,
-}: SharedButtonProps & { reactOnWindowFocus?: boolean }): ReactElement {
+}: SharedButtonProps): ReactElement {
   const hasTransactionLoaded = useBackgroundSelector(selectIsTransactionLoaded)
 
   const hasSignDataRequest = useBackgroundSelector(selectSigningData)
@@ -81,11 +79,7 @@ export default function TransactionButton({
         size={size}
         onClick={onClick}
         showLoadingOnClick
-        isDisabled={
-          (reactOnWindowFocus ? isOnDelayToSign : false) ||
-          !unlockButtons ||
-          isDisabled
-        }
+        isDisabled={isOnDelayToSign || !unlockButtons || isDisabled}
       >
         {children}
       </SharedButton>

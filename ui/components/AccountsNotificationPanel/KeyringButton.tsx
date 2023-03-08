@@ -5,13 +5,13 @@ import { useTranslation } from "react-i18next"
 import { useBackgroundDispatch, useAreKeyringsUnlocked } from "../../hooks"
 import SharedIcon from "../Shared/SharedIcon"
 
-type SigningButtonProps = {
+type KeyringButtonProps = {
   onCurrentAddressChange: (newAddress: string) => void
 }
 
-export default function SigningButton({
+export default function KeyringButton({
   onCurrentAddressChange,
-}: SigningButtonProps): ReactElement {
+}: KeyringButtonProps): ReactElement {
   const { t } = useTranslation()
   const dispatch = useBackgroundDispatch()
   const history = useHistory()

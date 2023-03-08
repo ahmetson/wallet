@@ -43,7 +43,7 @@ import SharedIcon from "../Shared/SharedIcon"
 import SharedDropdown from "../Shared/SharedDropDown"
 import SharedSlideUpMenu from "../Shared/SharedSlideUpMenu"
 import EditSectionForm from "./EditSectionForm"
-import SigningButton from "./SigningButton"
+import KeyringButton from "./KeyringButton"
 
 type WalletTypeInfo = {
   title: string
@@ -332,7 +332,7 @@ export default function AccountsNotificationPanelAccounts({
                   {isEnabled(FeatureFlags.SUPPORT_KEYRING_LOCKING) &&
                     (accountType === AccountType.Imported ||
                       accountType === AccountType.Internal) && (
-                      <SigningButton
+                      <KeyringButton
                         onCurrentAddressChange={onCurrentAddressChange}
                       />
                     )}

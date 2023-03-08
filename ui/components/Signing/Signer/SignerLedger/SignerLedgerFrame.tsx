@@ -10,7 +10,7 @@ import SignerLedgerConnect from "./SignerLedgerConnect"
 import SignerLedgerSigning from "./SignerLedgerSigning"
 import SignerLedgerConnectionStatus from "./SignerLedgerConnectionStatus"
 import { useSigningLedgerState } from "../../../SignTransaction/useSigningLedgerState"
-import TransactionButton from "../TransactionButton"
+import SigningButton from "../SigningButton"
 
 export default function SignerLedgerFrame<T extends SignOperationType>({
   children,
@@ -111,13 +111,9 @@ export default function SignerLedgerFrame<T extends SignOperationType>({
         <>
           <div className="signature-details">{children}</div>
           <footer>
-            <TransactionButton
-              size="large"
-              type="secondary"
-              onClick={handleReject}
-            >
+            <SharedButton size="large" type="secondary" onClick={handleReject}>
               {tSigning("reject")}
-            </TransactionButton>
+            </SharedButton>
 
             {ledgerCannotSign ? (
               <SharedButton
@@ -130,16 +126,15 @@ export default function SignerLedgerFrame<T extends SignOperationType>({
                 {t("checkLedger")}
               </SharedButton>
             ) : (
-              <TransactionButton
+              <SigningButton
                 type="primary"
                 size="large"
                 onClick={handleConfirm}
                 isDisabled={hasInsufficientFunds}
                 showLoadingOnClick
-                reactOnWindowFocus
               >
                 {globalT(signingActionLabelI18nKey)}
-              </TransactionButton>
+              </SigningButton>
             )}
           </footer>
           <SharedSlideUpMenu

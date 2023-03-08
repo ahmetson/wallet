@@ -4,7 +4,7 @@ import { createMemoryHistory } from "history"
 import React from "react"
 import { Router } from "react-router-dom"
 import { renderWithProviders } from "../../../tests/test-utils"
-import SigningButton from "../SigningButton"
+import KeyringButton from "../KeyringButton"
 
 const onChange = jest.fn()
 const unlockText = "Unlock signing"
@@ -17,12 +17,12 @@ const getPreloadedState = (status: "locked" | "unlocked") => ({
   },
 })
 
-describe("SigningButton", () => {
+describe("KeyringButton", () => {
   test("should go to the unlocking page after being clicked when the wallet is locked", async () => {
     const history = createMemoryHistory()
     const ui = renderWithProviders(
       <Router history={history}>
-        <SigningButton onCurrentAddressChange={onChange} />
+        <KeyringButton onCurrentAddressChange={onChange} />
       </Router>,
       { preloadedState: getPreloadedState("locked") }
     )
@@ -38,7 +38,7 @@ describe("SigningButton", () => {
     const history = createMemoryHistory()
     const ui = renderWithProviders(
       <Router history={history}>
-        <SigningButton onCurrentAddressChange={onChange} />
+        <KeyringButton onCurrentAddressChange={onChange} />
       </Router>,
       { preloadedState: getPreloadedState("unlocked") }
     )
