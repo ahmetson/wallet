@@ -52,7 +52,7 @@ function ConnectionDAppGuideline({
                   <div className="learn_more">
                     <img
                       height="52"
-                      alt="Taho - Wallet Connect"
+                      alt="Ahmetson's wallet - Wallet Connect"
                       src="/images/tally_wc.png"
                     />
                     <p>
@@ -88,7 +88,7 @@ function ConnectionDAppGuideline({
                   </ol>
                   <div className="list_wrap">
                     <span className="item">
-                      <img src="./images/tally_token.svg" alt="Taho token" />
+                      <img src="./images/tally_token.svg" alt="Ahmetson's wallet token" />
                       {tShared("taho")}
                     </span>
                     <span className="item">

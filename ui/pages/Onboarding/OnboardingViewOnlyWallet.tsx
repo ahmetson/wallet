@@ -59,10 +59,10 @@ export default function OnboardingViewOnlyWallet({
         {!embedded && <div className="wordmark" />}
       </div>
       <div className="content">
-        <h1 className="serif_header">Explore Taho</h1>
+        <h1 className="serif_header">Explore Ahmetson's wallet</h1>
         <div className="subtitle">
           Add an Ethereum address, ENS or UNS name to view an existing wallet in
-          Taho.
+          Ahmetson's wallet.
         </div>
         <form
           onSubmit={(event) => {
@@ -81,7 +81,7 @@ export default function OnboardingViewOnlyWallet({
             showLoadingOnClick
             isFormSubmit
           >
-            Explore Taho
+            Explore Ahmetson's wallet
           </SharedButton>
         </form>
       </div>

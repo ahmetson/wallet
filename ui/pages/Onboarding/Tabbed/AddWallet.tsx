@@ -16,7 +16,7 @@ function OnboardingAddWallet(): ReactElement {
         <img
           width="80"
           height="80"
-          alt="Taho Gold"
+          alt="Ahmetson's wallet Gold"
           src="./images/doggo_gold.svg"
         />
         <div className="bottom_content">
